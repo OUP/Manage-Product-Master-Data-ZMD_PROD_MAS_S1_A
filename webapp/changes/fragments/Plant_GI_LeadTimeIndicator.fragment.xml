@@ -1,0 +1,18 @@
+<!-- Use stable and unique id's!-->
+<core:FragmentDefinition 
+    xmlns:core="sap.ui.core" 
+    xmlns="sap.m" 
+    xmlns:smartField="sap.ui.comp.smartfield" 
+    xmlns:smartForm="sap.ui.comp.smartform">
+
+    <!-- Lead Time Indicator -->
+    <smartForm:GroupElement id="idSmartFormGroupElementP01" visible="{= !${ui>/editable}}">
+        <smartField:SmartField id="idSubSectionFieldP01" value="{LeadTimeIndicatorProfile}" />
+    </smartForm:GroupElement>
+    <smartForm:GroupElement id="idSmartFormGroupElementP01-0" visible="{ui>/editable}">
+        <Select id="idSubSectionFieldP01-1" selectedKey="{LeadTimeIndicatorProfile}" showSecondaryValues="true" forceSelection="false" items="{customer.leadTimeIndicator>/ZPTP_C_SUP_AREA_VH}">
+            <core:ListItem id="idSubSectionFieldP01-2" key="{customer.leadTimeIndicator>LeadTimeIndicatorProfile}" text="{customer.leadTimeIndicator>LeadTimeIndicatorProfile}" additionalText="{customer.leadTimeIndicator>LeadTimeIndicatorDescription}" />
+        </Select>
+    </smartForm:GroupElement>
+
+</core:FragmentDefinition>

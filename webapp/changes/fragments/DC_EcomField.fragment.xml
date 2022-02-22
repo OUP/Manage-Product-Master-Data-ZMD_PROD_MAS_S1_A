@@ -1,0 +1,12 @@
+<!-- Use stable and unique id's!-->
+<core:FragmentDefinition 
+    xmlns:core="sap.ui.core"
+    xmlns:smartForm="sap.ui.comp.smartform" 
+    xmlns:smartField="sap.ui.comp.smartfield">
+    
+    <!-- Ecom. Field -->
+    <smartForm:GroupElement id="idSmartFormProductsGroupElement01">
+        <smartField:SmartField id="idSubSectionProductsField01" value="{ZZ1_Ecommerce_SAL}"/>
+    </smartForm:GroupElement>
+
+</core:FragmentDefinition>

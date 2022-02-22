@@ -1,0 +1,37 @@
+{
+	"fileName": "id_1643343994054_800_addXML",
+	"fileType": "change",
+	"changeType": "addXML",
+	"moduleName": "customer/ZMD_PROD_MAS_S1_A/changes/fragments/DC_EcomField.fragment.xml",
+	"reference": "customer.ZMD_PROD_MAS_S1_A",
+	"packageName": "$TMP",
+	"content": {
+		"targetAggregation": "groupElements",
+		"index": 6,
+		"fragmentPath": "fragments/DC_EcomField.fragment.xml"
+	},
+	"selector": {
+		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productsalesdelivery--com.sap.vocabularies.UI.v1.FieldGroup::ProductGroups::FormGroup",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/mdm.cmd.product.maintain/changes/",
+	"projectId": "customer.ZMD_PROD_MAS_S1_A",
+	"creation": "2022-01-28T04:27:11.821Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.84.6",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "addXML"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

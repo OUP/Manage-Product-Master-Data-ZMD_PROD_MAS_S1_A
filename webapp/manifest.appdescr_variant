@@ -1,0 +1,114 @@
+{
+  "fileName": "manifest",
+  "layer": "CUSTOMER_BASE",
+  "fileType": "appdescr_variant",
+  "reference": "mdm.cmd.product.maintain",
+  "id": "customer.ZMD_PROD_MAS_S1_A",
+  "namespace": "apps/mdm.cmd.product.maintain/appVariants/customer.ZMD_PROD_MAS_S1_A/",
+  "content": [
+      {
+        "changeType": "appdescr_ui5_addNewModel",
+        "content": {
+            "dataSource": {
+                "customer.LeadTimeIndicatorDataSource": {
+                    "uri": "/sap/opu/odata/sap/ZPTP_C_SUP_AREA_VH_CDS",
+                    "type": "OData",
+                    "settings": {
+                        "odataVersion": "2.0"
+                    }
+                }
+            },
+            "model": {
+                "customer.leadTimeIndicator": {
+                    "dataSource": "customer.LeadTimeIndicatorDataSource",
+                    "preload": true,
+                    "settings": {}
+                }
+            }
+        }
+    },
+    {
+        "changeType": "appdescr_ui5_addNewModel",
+        "content": {
+            "dataSource": {
+                "customer.materialTypeDataSource": {
+                    "uri": "/sap/opu/odata/sap/ZPTP_C_MTYPE_RESTRICT_CDS",
+                    "type": "OData",
+                    "settings": {
+                        "odataVersion": "2.0"
+                    }
+                }
+            },
+            "model": {
+                "customer.materialType": {
+                    "dataSource": "customer.materialTypeDataSource",
+                    "preload": true,
+                    "settings": {}
+                }
+            }
+        }
+    },
+    {
+        "changeType": "appdescr_ui5_addNewModel",
+        "content": {
+            "dataSource": {
+                "customer.codeTypeDataSource": {
+                    "uri": "/sap/opu/odata/sap/ZZ1_PTP_ZIDCODETYPE_CDS",
+                    "type": "OData",
+                    "settings": {
+                        "odataVersion": "2.0",
+                        "annotations": ["customer.ZZ1_PTP_ZIDCODETYPE_CDS_VAN"]
+                    }
+                },
+                "customer.ZZ1_PTP_ZIDCODETYPE_CDS_VAN": {
+                    "uri": "/sap/opu/odata/IWFND/CATALOGSERVICE;v=2/Annotations(TechnicalName='ZZ1_PTP_ZIDCODETYPE_CDS_VAN',Version='0001')/$value/",
+                    "type": "ODataAnnotation",
+                    "settings": {}
+                }
+            },
+            "model": {
+                "customer.codeType": {
+                    "dataSource": "customer.codeTypeDataSource",
+                    "preload": true,
+                    "settings": {
+                        "defaultBindingMode": "TwoWay",
+                        "defaultCountMode": "Inline",
+                        "refreshAfterChange": true,
+                        "metadataUrlParams": {
+                            "sap-value-list": "none"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    {
+        "changeType": "appdescr_ui5_addNewModel",
+        "content": {
+            "dataSource": {
+                "customer.statusRestrictDataSource": {
+                    "uri": "/sap/opu/odata/sap/ZOTC_C_MAT_STAT_RESTRICT_CDS",
+                    "type": "OData",
+                    "settings": {
+                        "odataVersion": "2.0"
+                    }
+                }
+            },
+            "model": {
+                "customer.statusRestrict": {
+                    "dataSource": "customer.statusRestrictDataSource",
+                    "preload": true,
+                    "settings": {}
+                }
+            }
+        }
+    },
+    {
+      "changeType": "appdescr_app_setTitle",
+      "content": {},
+      "texts": {
+        "i18n": "i18n/i18n.properties"
+      }
+    }
+  ]
+}

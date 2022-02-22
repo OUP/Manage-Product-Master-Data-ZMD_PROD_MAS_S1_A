@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Use stable and unique id's!-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartForm="sap.ui.comp.smartform" xmlns:uxap="sap.uxap">
+   <uxap:ObjectPageSection id="idSection2" title="section2" titleUppercase="false">
+      <uxap:subSections>
+         <uxap:ObjectPageSubSection id="idSection2SubSection2" title="Basic MediaData1" titleUppercase="false" visible="{parts: [{value:'BM1'},{path:'ProductType'}], formatter: '.extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleTabVisibility'}">
+            <uxap:blocks>
+               
+               <smartForm:SmartForm id="idSmartForm2" editable="{ui>/editable}">
+                  <smartForm:layout>
+                     <smartForm:ColumnLayout id="idSmartColumnLayout2" columnsXL="4" columnsL="3" columnsM="2" labelCellsLarge="12" emptyCellsLarge="0" />
+                  </smartForm:layout>
+                  
+                  <smartForm:Group id="idSmartForm2Group1" label="Header">
+                     <!--Header-ID Code Type-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement45">
+                        <smartField:SmartField id="idSubSectionField45" value="{ZZ1_IDCodeType_PRD}" editable="false" enabled="false" />
+                     </smartForm:GroupElement>
+                     <!--Header-Identification code-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement46">
+                        <smartField:SmartField id="idSubSectionField46" value="{ZZ1_Identificationcode_PRD}" editable="false" enabled="false" />
+                     </smartForm:GroupElement>
+                     <!--Header-Other ID Code-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement47">
+                        <smartField:SmartField id="idSubSectionField47" value="{ZZ1_OtherIDCode_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Header-Other ID Code-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement47-0">
+                        <Button id="idSubSectionField47-1" text="Other ID Code" width="125px" press=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.onCodeTypePress" class="sapUiTinyMarginBottom" />
+                     </smartForm:GroupElement>
+                     <!--Header-Author/Artist (EDITOR?)-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement48">
+                        <smartField:SmartField id="idSubSectionField48" value="{ZZ1_AuthorArtistEDITOR_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Header-Title-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement49">
+                        <smartField:SmartField id="idSubSectionField49" value="{ZZ1_Title_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Header-Subtitle 1-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement50">
+                        <smartField:SmartField id="idSubSectionField50" value="{ZZ1_Subtitle1_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Header-Subtitle 2-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement52">
+                        <smartField:SmartField id="idSubSectionField52" value="{ZZ1_Subtitle2_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Header-Subtitle 3-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement53">
+                        <smartField:SmartField id="idSubSectionField53" value="{ZZ1_Subtitle3_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Header-Languages-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement51" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField51" value="{ZZ1_Languages_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement51-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField51-1" selectedKey="{ZZ1_Languages_PRD}" showSecondaryValues="true" forceSelection="false" items="{/I_Language}">
+                           <core:ListItem id="idSubSectionField51-2" key="{Language}" text="{Language}" additionalText="{Language_Text}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                  </smartForm:Group>
+
+                  <smartForm:Group id="idSmartForm2Group2" label="Assignment">
+                     <!--Assignment-Media product Series-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement54" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField54" value="{ZZ1_Mediaproductserie_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement54-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField54-1" selectedKey="{ZZ1_Mediaproductserie_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_PTP_ZSERIESCODESet}">
+                           <core:ListItem id="idSubSectionField54-2" key="{ZREFMDPROD}" text="{ZREFMDPROD}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                     <!--Assignment-Content Category-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement56" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField56" value="{ZZ1_ContentCategory_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement56-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField56-1" selectedKey="{ZZ1_ContentCategory_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_ContentCategorySet}">
+                           <core:ListItem id="idSubSectionField56-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                     <!--Assignment-Publication type-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement57" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField57" value="{ZZ1_PublicationType_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement57-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField57-1" selectedKey="{ZZ1_PublicationType_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_PublicationTypeSet}">
+                           <core:ListItem id="idSubSectionField57-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                     <!--Upid-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement57-3">
+                        <smartField:SmartField id="idSubSectionField57-3" value="{ZZ1_Upid_PRD}" />
+                     </smartForm:GroupElement>
+                     
+                  </smartForm:Group>
+
+                  <smartForm:Group id="idSmartForm2Group3" label="Publication">
+                     <!--Publication-Edition counter-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement62">
+                        <smartField:SmartField id="idSubSectionField62" value="{ZZ1_Editioncounter_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--Publication-Reprinting type-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement63" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField63" value="{ZZ1_ReprintingType_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement63-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField63-1" selectedKey="{ZZ1_ReprintingType_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_ReprintingTypeSet}">
+                           <core:ListItem id="idSubSectionField63-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                     <!--Publication-Edition Category-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement64" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField64" value="{ZZ1_EditionCategory_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement64-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField64-1" selectedKey="{ZZ1_EditionCategory_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_EditionCategorySet}">
+                           <core:ListItem id="idSubSectionField64-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                  </smartForm:Group>
+
+                  <smartForm:Group id="idSmartForm2Group4" label="IP Assignment">
+                     <!--IP Assignment-IP number-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement65">
+                        <smartField:SmartField id="idSubSectionField65" value="{ZZ1_IPnumber_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--IP Assignment-Short Text for an IP-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement66">
+                        <smartField:SmartField id="idSubSectionField66" value="{ZZ1_ShortTextIP_PRD}" />
+                     </smartForm:GroupElement>
+                  </smartForm:Group>
+               </smartForm:SmartForm>
+
+            </uxap:blocks>
+         </uxap:ObjectPageSubSection>
+      </uxap:subSections>
+   </uxap:ObjectPageSection>
+</core:FragmentDefinition>

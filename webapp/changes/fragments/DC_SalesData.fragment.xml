@@ -1,0 +1,21 @@
+<!-- Use stable and unique id's!-->
+<core:FragmentDefinition 
+    xmlns:core="sap.ui.core"
+    xmlns:smartForm="sap.ui.comp.smartform" 
+    xmlns:smartField="sap.ui.comp.smartfield">
+
+    <smartForm:Group id="idSmartFormSalesDataGroup1" label="Sales Data">
+
+        <!-- EDUK: Stop acc. -->
+        <smartForm:GroupElement id="idSmartFormSalesDataGroupElement1">
+            <smartField:SmartField id="idSubSectionSalesDataField1" value="{ZZ1_EDUKStopacc_SAL}" editable="{oCustomerViewModel>/bEDUKStopAcc}"/>
+        </smartForm:GroupElement>
+    
+        <!-- EDUK: Stop Bill. -->
+        <smartForm:GroupElement id="idSmartFormSalesDataGroupElement2">
+            <smartField:SmartField id="idSubSectionSalesDataField2" value="{ZZ1_EDUKStopBill_SAL}" editable="{oCustomerViewModel>/bEDUKStopBill}"/>
+        </smartForm:GroupElement>
+        
+    </smartForm:Group>
+    
+</core:FragmentDefinition>

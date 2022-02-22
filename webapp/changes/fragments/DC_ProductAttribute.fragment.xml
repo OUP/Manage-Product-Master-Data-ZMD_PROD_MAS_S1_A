@@ -1,0 +1,67 @@
+<!-- Use stable and unique id's!-->
+<core:FragmentDefinition 
+    xmlns="sap.m"
+    xmlns:uxap="sap.uxap"
+    xmlns:core="sap.ui.core"
+    xmlns:smartForm="sap.ui.comp.smartform" 
+    xmlns:smartField="sap.ui.comp.smartfield">
+
+    <uxap:ObjectPageSubSection 
+        id="idSection5SubSection1" 
+        title="Product Attribute" 
+        titleUppercase="false">
+        <uxap:blocks>
+
+            <smartForm:SmartForm id="idSmartForm5" editable="{ui>/editable}">
+                <smartForm:layout>
+                    <smartForm:ColumnLayout id="idSmartColumnLayout5" columnsXL="4" columnsL="3" columnsM="2" labelCellsLarge="12" emptyCellsLarge="0" />
+                </smartForm:layout>
+                        
+                <smartForm:Group id="idSmartForm5Group1">
+                    <!-- Priced / Unpriced Stock -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement78">
+                        <smartField:SmartField id="idSubSectionField78" value="{ProductHasAttributeID01}" />
+                    </smartForm:GroupElement>
+                    <!-- Electronic Flag -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement79">
+                        <smartField:SmartField id="idSubSectionField79" value="{ProductHasAttributeID02}" />
+                    </smartForm:GroupElement>
+                    <!-- Corrections Flag -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement80">
+                        <smartField:SmartField id="idSubSectionField80" value="{ProductHasAttributeID03}" />
+                    </smartForm:GroupElement>
+                    <!-- Looseleaf Release -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement81">
+                        <smartField:SmartField id="idSubSectionField81" value="{ProductHasAttributeID04}" />
+                    </smartForm:GroupElement>
+                    <!-- Exclude from IRI -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement82">
+                        <smartField:SmartField id="idSubSectionField82" value="{ProductHasAttributeID05}" />
+                    </smartForm:GroupElement>
+                    <!-- Faulty Stock Indicator -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement83">
+                        <smartField:SmartField id="idSubSectionField83" value="{ProductHasAttributeID06}" />
+                    </smartForm:GroupElement>
+                    <!-- Jointly Owned Title -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement84">
+                        <smartField:SmartField id="idSubSectionField84" value="{ProductHasAttributeID07}" />
+                    </smartForm:GroupElement>
+                    <!-- Explode BOM -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement85">
+                        <smartField:SmartField id="idSubSectionField85" value="{ProductHasAttributeID08}" />
+                    </smartForm:GroupElement>
+                    <!-- Additional Vendors -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement86">
+                        <smartField:SmartField id="idSubSectionField86" value="{ProductHasAttributeID09}" />
+                    </smartForm:GroupElement>
+                    <!-- Virtual Pack Component -->
+                    <smartForm:GroupElement id="idSmartFormGroupElement87">
+                        <smartField:SmartField id="idSubSectionField87" value="{ProductHasAttributeID10}" />
+                    </smartForm:GroupElement>
+                </smartForm:Group>
+            </smartForm:SmartForm>
+            
+        </uxap:blocks>
+    </uxap:ObjectPageSubSection>
+
+</core:FragmentDefinition>

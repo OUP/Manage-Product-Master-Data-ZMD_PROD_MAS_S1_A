@@ -1,0 +1,53 @@
+{
+	"fileName": "id_1637414233089_688_addFields",
+	"fileType": "change",
+	"changeType": "addFields",
+	"moduleName": "",
+	"reference": "customer.ZMD_PROD_MAS_S1_A",
+	"packageName": "$TMP",
+	"content": {
+		"field": {
+			"value": ["ZZ1_GLOBAL_PUB_DATE_PRD"],
+			"valueProperty": ["value"],
+			"selector": {
+				"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup_C_ProductType_ZZ1_GLOBAL_PUB_DATE_PRD",
+				"idIsLocal": false
+			},
+			"jsTypes": ["sap.ui.comp.smartfield.SmartField"],
+			"index": 0
+		}
+	},
+	"selector": {
+		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/mdm.cmd.product.maintain/changes/",
+	"projectId": "customer.ZMD_PROD_MAS_S1_A",
+	"creation": "2021-11-20T13:17:53.030Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.84.6",
+		"sourceChangeFileName": "",
+		"compositeCommand": "id_1637414233090_689_composite",
+		"command": "addDelegateProperty"
+	},
+	"oDataInformation": {
+		"oDataServiceUri": "/sap/opu/odata/sap/MD_C_PRODUCT_MAINTAIN_SRV/",
+		"propertyName": "ZZ1_GLOBAL_PUB_DATE_PRD",
+		"entityType": "C_ProductType"
+	},
+	"dependentSelector": {
+		"form": {
+			"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--BasicData::Form",
+			"idIsLocal": false
+		}
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

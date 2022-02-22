@@ -1,0 +1,38 @@
+{
+	"fileName": "id_1637414828244_1090_appdescr_ui5_addLibraries",
+	"fileType": "change",
+	"changeType": "appdescr_ui5_addLibraries",
+	"moduleName": "",
+	"reference": "customer.ZMD_PROD_MAS_S1_A",
+	"packageName": "",
+	"content": {
+		"libraries": {
+			"sap.ui.comp": {
+				"minVersion": "1.81",
+				"lazy": false
+			}
+		}
+	},
+	"selector": {
+		"id": ""
+	},
+	"layer": "CUSTOMER_BASE",
+	"namespace": "apps/customer.ZMD_PROD_MAS_S1_A/changes/",
+	"projectId": "customer.ZMD_PROD_MAS_S1_A",
+	"creation": "2021-11-20T13:27:40.720Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.84.6",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": ""
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": true
+}

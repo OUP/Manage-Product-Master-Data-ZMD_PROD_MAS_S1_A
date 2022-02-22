@@ -1,0 +1,37 @@
+{
+	"fileName": "id_1634552838975_768_addXML",
+	"fileType": "change",
+	"changeType": "addXML",
+	"moduleName": "customer/ZMD_PROD_MAS_S1_A/changes/fragments/Basic_MediaData1.fragment.xml",
+	"reference": "customer.ZMD_PROD_MAS_S1_A",
+	"packageName": "$TMP",
+	"content": {
+		"targetAggregation": "sections",
+		"index": 2,
+		"fragmentPath": "fragments/Basic_MediaData1.fragment.xml"
+	},
+	"selector": {
+		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--objectPage",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/mdm.cmd.product.maintain/changes/",
+	"projectId": "customer.ZMD_PROD_MAS_S1_A",
+	"creation": "2021-10-18T10:28:16.764Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.84.6",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "addXML"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}

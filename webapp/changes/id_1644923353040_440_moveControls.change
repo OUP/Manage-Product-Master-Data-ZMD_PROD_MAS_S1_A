@@ -1,0 +1,73 @@
+{
+    "fileName": "id_1644923353040_440_moveControls",
+    "fileType": "change",
+    "changeType": "moveControls",
+    "moduleName": "",
+    "reference": "customer.ZMD_PROD_MAS_S1_A",
+    "packageName": "$TMP",
+    "content":{
+        "movedElements": [{
+            "selector": {
+                "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--GeneralInfo::Section",
+                "idIsLocal": false
+            },
+            "sourceIndex": 5,
+            "targetIndex": 4
+        }],
+        "source": {
+            "selector": {
+                "aggregation": "sections",
+                "type": "sap.uxap.ObjectPageLayout",
+                "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--objectPage",
+                "idIsLocal": false
+            }
+        },
+        "target": {
+            "selector": {
+                "aggregation": "sections",
+                "type": "sap.uxap.ObjectPageLayout",
+                "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--objectPage",
+                "idIsLocal": false
+            }
+        }
+    },
+    "selector": {
+        "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--objectPage",
+        "idIsLocal": false
+    },
+    "layer": "CUSTOMER_BASE",
+    "texts": {},
+    "namespace": "apps/mdm.cmd.product.maintain/changes/",
+    "projectId": "customer.ZMD_PROD_MAS_S1_A",
+    "creation": "2022-02-15T11:10:33.8010100Z",
+    "originalLanguage": "EN",
+    "conditions": {},
+    "context": "",
+    "support": {
+        "generator": "Change.createInitialFileContent",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.84.6",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "move"
+    },
+    "oDataInformation": {},
+    "dependentSelector": {
+        "source": {
+            "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--objectPage",
+            "idIsLocal": false
+        },
+        "target":{
+            "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--objectPage",
+            "idIsLocal": false
+        },
+        "movedElements":[{
+            "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--GeneralInfo::Section",
+            "idIsLocal": false
+        }]
+    },
+    "jsOnly": false,
+    "variantReference": "",
+    "appDescriptorChange": false
+}

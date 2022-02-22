@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Use stable and unique id's!-->
+<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartForm="sap.ui.comp.smartform" xmlns:uxap="sap.uxap">
+   <uxap:ObjectPageSection id="idSection3" title="section3" titleUppercase="false">
+      <uxap:subSections>
+         <uxap:ObjectPageSubSection id="idSection3SubSection3" title="Basic MediaData2" titleUppercase="false" visible="{parts: [{value:'BM2'},{path:'ProductType'}], formatter: '.extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleTabVisibility'}">
+            <uxap:blocks>
+               
+               <smartForm:SmartForm id="idSmartForm3" editable="{ui>/editable}">
+                  <smartForm:layout>
+                     <smartForm:ColumnLayout id="idSmartColumnLayout3" columnsXL="4" columnsL="3" columnsM="2" labelCellsLarge="12" emptyCellsLarge="0" />
+                  </smartForm:layout>
+                  
+                  <smartForm:Group id="idSmartForm3Group1" label="First Publication">
+                     <!--First Publication-Original Title-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement67">
+                        <smartField:SmartField id="idSubSectionField67" value="{ZZ1_OriginalTitle_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--First Publication-Original ID code-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement68">
+                        <smartField:SmartField id="idSubSectionField68" value="{ZZ1_OriginalIDCode_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--First Publication-ID code type-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement69" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField69" value="{ZZ1_FirstPubIdCode_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement69-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField69-1" selectedKey="{ZZ1_FirstPubIdCode_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_IDCodeTypeSet}">
+                           <core:ListItem id="idSubSectionField69-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                    
+                  </smartForm:Group>
+                  
+                  <smartForm:Group id="idSmartForm3Group2" label="IBP Relevant Fields">
+                     <!--IBP relevant fields-ABC Indicator-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement73" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField73" value="{ZZ1_ABCIndicator_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement73-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField73-1" selectedKey="{ZZ1_ABCIndicator_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_ABCIndicatorSet}">
+                           <core:ListItem id="idSubSectionField73-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                     <!--IBP relevant fields-XYZ Indicator-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement74" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionField74" value="{ZZ1_XYZIndicator_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElement74-0" visible="{ui>/editable}">
+                        <Select id="idSubSectionField74-1" selectedKey="{ZZ1_XYZIndicator_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_XYZIndicatorSet}">
+                           <core:ListItem id="idSubSectionField74-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </Select>
+                     </smartForm:GroupElement>
+                     <!--IBP relevant fields-Annual forecast Year 1-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement75">
+                        <smartField:SmartField id="idSubSectionField75" value="{ZZ1_AnnualforecastYear_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--IBP relevant fields-Annual forecast Year 2-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement76">
+                        <smartField:SmartField id="idSubSectionField76" value="{ZZ1_Annualforecast2_PRD}" />
+                     </smartForm:GroupElement>
+                     <!--IBP relevant fields-Split profile-->
+                     <smartForm:GroupElement id="idSmartFormGroupElement77">
+                        <smartField:SmartField id="idSubSectionField77" value="{ZZ1_Splitprofile_PRD}" />
+                     </smartForm:GroupElement>
+                  </smartForm:Group>
+                  
+               </smartForm:SmartForm>
+
+            </uxap:blocks>
+         </uxap:ObjectPageSubSection>
+      </uxap:subSections>
+   </uxap:ObjectPageSection>
+</core:FragmentDefinition>

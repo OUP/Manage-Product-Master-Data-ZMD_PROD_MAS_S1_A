@@ -1,0 +1,11 @@
+{
+  "componentname": "mdm.cmd.product.maintain",
+  "safeMode": false,
+  "appvariant": "ZMD_PROD_MAS_S1_A",
+  "layer": "CUSTOMER_BASE",
+  "sourceSystem": "S4D130",
+  "isOVPApp": false,
+  "isFioriElement": true,
+  "environment": "ABAP",
+  "ui5Version": "1.84.7"
+}
