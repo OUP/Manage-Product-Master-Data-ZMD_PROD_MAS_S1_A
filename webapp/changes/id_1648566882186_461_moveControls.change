@@ -1,0 +1,76 @@
+{
+  "fileName": "id_1648566882186_461_moveControls",
+  "fileType": "change",
+  "changeType": "moveControls",
+  "moduleName": "",
+  "reference": "customer.ZMD_PROD_MAS_S1_A",
+  "packageName": "$TMP",
+  "content": {
+    "movedElements": [
+      {
+        "selector": {
+          "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup_C_ProductType_ProductDocumentType",
+          "idIsLocal": false
+        },
+        "sourceIndex": 0,
+        "targetIndex": 2
+      }
+    ],
+    "source": {
+      "selector": {
+        "aggregation": "formElements",
+        "type": "sap.ui.comp.smartform.Group",
+        "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup",
+        "idIsLocal": false
+      }
+    },
+    "target": {
+      "selector": {
+        "aggregation": "formElements",
+        "type": "sap.ui.comp.smartform.Group",
+        "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup",
+        "idIsLocal": false
+      }
+    }
+  },
+  "selector": {
+    "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--BasicData::Form",
+    "idIsLocal": false
+  },
+  "layer": "CUSTOMER_BASE",
+  "texts": {},
+  "namespace": "apps/customer.ZMD_PROD_MAS_S1_A/changes/",
+  "projectId": "customer.ZMD_PROD_MAS_S1_A",
+  "creation": "2022-03-29T15:15:02.3995160Z",
+  "originalLanguage": "EN",
+  "conditions": {},
+  "context": "",
+  "support": {
+    "generator": "Change.createInitialFileContent",
+    "service": "",
+    "user": "",
+    "sapui5Version": "1.84.6",
+    "sourceChangeFileName": "",
+    "compositeCommand": ""
+  },
+  "oDataInformation": {},
+  "dependentSelector": {
+    "source": {
+      "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup",
+      "idIsLocal": false
+    },
+    "target": {
+      "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup",
+      "idIsLocal": false
+    },
+    "movedElements": [
+      {
+        "id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--com.sap.vocabularies.UI.v1.Identification::FormGroup_C_ProductType_ProductDocumentType",
+        "idIsLocal": false
+      }
+    ]
+  },
+  "jsOnly": false,
+  "variantReference": "",
+  "appDescriptorChange": false
+}

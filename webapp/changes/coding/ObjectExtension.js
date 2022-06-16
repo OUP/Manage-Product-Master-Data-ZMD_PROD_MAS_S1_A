@@ -404,10 +404,10 @@ sap.ui.define(
             // Header - Languages
             this._setLabelsForSelectBox("idSubSectionField51-1", "Languages");
             // Assignment - Media product Series
-            this._setLabelsForSelectBox(
-              "idSubSectionField54-1",
-              "Media product series"
-            );
+            // this._setLabelsForSelectBox(
+            //   "idSubSectionField54-1",
+            //   "Media product series"
+            // );
             // Assignment - Content Category
             this._setLabelsForSelectBox(
               "idSubSectionField56-1",

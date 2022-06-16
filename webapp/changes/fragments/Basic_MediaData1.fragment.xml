@@ -61,14 +61,14 @@
 
                   <smartForm:Group id="idSmartForm2Group2" label="Assignment">
                      <!--Assignment-Media product Series-->
-                     <smartForm:GroupElement id="idSmartFormGroupElement54" visible="{= !${ui>/editable}}">
+                     <smartForm:GroupElement id="idSmartFormGroupElement54">
                         <smartField:SmartField id="idSubSectionField54" value="{ZZ1_Mediaproductserie_PRD}" />
                      </smartForm:GroupElement>
-                     <smartForm:GroupElement id="idSmartFormGroupElement54-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField54-1" selectedKey="{ZZ1_Mediaproductserie_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_PTP_ZSERIESCODESet}">
+                     <!-- <smartForm:GroupElement id="idSmartFormGroupElement54-0" visible="{ui>/editable}"> -->
+                        <!-- <Select id="idSubSectionField54-1" selectedKey="{ZZ1_Mediaproductserie_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_PTP_ZSERIESCODESet}">
                            <core:ListItem id="idSubSectionField54-2" key="{ZREFMDPROD}" text="{ZREFMDPROD}" additionalText="{Description}" />
-                        </Select>
-                     </smartForm:GroupElement>
+                        </Select> -->
+                     <!-- </smartForm:GroupElement> -->
                      <!--Assignment-Content Category-->
                      <smartForm:GroupElement id="idSmartFormGroupElement56" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField56" value="{ZZ1_ContentCategory_PRD}" />
