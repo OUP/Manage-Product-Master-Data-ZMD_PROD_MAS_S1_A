@@ -10,9 +10,12 @@
         <smartField:SmartField id="idSubSectionFieldP01" value="{LeadTimeIndicatorProfile}" />
     </smartForm:GroupElement>
     <smartForm:GroupElement id="idSmartFormGroupElementP01-0" visible="{ui>/editable}">
-        <Select id="idSubSectionFieldP01-1" selectedKey="{LeadTimeIndicatorProfile}" showSecondaryValues="true" forceSelection="false" items="{customer.leadTimeIndicator>/ZPTP_C_SUP_AREA_VH}">
+        <!-- <ComboBox id="idSubSectionFieldP01-1" selectedKey="{LeadTimeIndicatorProfile}" showSecondaryValues="true" items="{oLeadTimeIndicatorModel>/}">
+            <core:ListItem id="idSubSectionFieldP01-2" key="{oLeadTimeIndicatorModel>LeadTimeIndicatorProfile}" text="{oLeadTimeIndicatorModel>LeadTimeIndicatorProfile}" additionalText="{oLeadTimeIndicatorModel>LeadTimeIndicatorDescription}" />
+        </ComboBox> -->
+        <ComboBox id="idSubSectionFieldP01-1" selectedKey="{LeadTimeIndicatorProfile}" showSecondaryValues="true" items="{customer.leadTimeIndicator>/ZPTP_C_SUP_AREA_VH}">
             <core:ListItem id="idSubSectionFieldP01-2" key="{customer.leadTimeIndicator>LeadTimeIndicatorProfile}" text="{customer.leadTimeIndicator>LeadTimeIndicatorProfile}" additionalText="{customer.leadTimeIndicator>LeadTimeIndicatorDescription}" />
-        </Select>
+        </ComboBox>
     </smartForm:GroupElement>
 
 </core:FragmentDefinition>

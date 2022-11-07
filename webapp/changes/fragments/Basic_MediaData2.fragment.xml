@@ -25,9 +25,9 @@
                         <smartField:SmartField id="idSubSectionField69" value="{ZZ1_FirstPubIdCode_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement69-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField69-1" selectedKey="{ZZ1_FirstPubIdCode_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_IDCodeTypeSet}">
+                        <ComboBox id="idSubSectionField69-1" selectedKey="{ZZ1_FirstPubIdCode_PRD}" showSecondaryValues="true" items="{/ZZ1_IDCodeTypeSet}">
                            <core:ListItem id="idSubSectionField69-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                     
                   </smartForm:Group>
@@ -38,18 +38,18 @@
                         <smartField:SmartField id="idSubSectionField73" value="{ZZ1_ABCIndicator_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement73-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField73-1" selectedKey="{ZZ1_ABCIndicator_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_ABCIndicatorSet}">
+                        <ComboBox id="idSubSectionField73-1" selectedKey="{ZZ1_ABCIndicator_PRD}" showSecondaryValues="true" items="{/ZZ1_ABCIndicatorSet}">
                            <core:ListItem id="idSubSectionField73-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      <!--IBP relevant fields-XYZ Indicator-->
                      <smartForm:GroupElement id="idSmartFormGroupElement74" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField74" value="{ZZ1_XYZIndicator_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement74-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField74-1" selectedKey="{ZZ1_XYZIndicator_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_XYZIndicatorSet}">
+                        <ComboBox id="idSubSectionField74-1" selectedKey="{ZZ1_XYZIndicator_PRD}" showSecondaryValues="true" items="{/ZZ1_XYZIndicatorSet}">
                            <core:ListItem id="idSubSectionField74-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      <!--IBP relevant fields-Annual forecast Year 1-->
                      <smartForm:GroupElement id="idSmartFormGroupElement75">

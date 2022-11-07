@@ -1,14 +1,14 @@
 {
-	"fileName": "id_1634558495102_650_addXML",
+	"fileName": "id_1634558495102_651_addXML",
 	"fileType": "change",
 	"changeType": "addXML",
-	"moduleName": "customer/ZMD_PROD_MAS_S1_A/changes/fragments/Plant_GI_LeadTimeIndicator.fragment.xml",
+	"moduleName": "customer/ZMD_PROD_MAS_S1_A/changes/fragments/Plant_GI_Returned_POD.fragment.xml",
 	"reference": "customer.ZMD_PROD_MAS_S1_A",
 	"packageName": "$TMP",
 	"content": {
 		"targetAggregation": "groupElements",
-		"index": 17,
-		"fragmentPath": "fragments/Plant_GI_LeadTimeIndicator.fragment.xml"
+		"index": 16,
+		"fragmentPath": "fragments/Plant_GI_Returned_POD.fragment.xml"
 	},
 	"selector": {
 		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup",

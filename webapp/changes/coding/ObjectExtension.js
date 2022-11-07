@@ -71,8 +71,10 @@ sap.ui.define(
       bEDUKStopAcc: false,
       bEDUKStopBill: false,
     });
+    let _oLeadTimeIndicatorModel = new JSONModel();
     let _oRowData;
     let _oObjectData;
+    let _aProductCompositionIndicator = [];
 
     return ControllerExtension.extend("ZMD_PROD_MAS_S1_A.ObjectExtension", {
       // this section allows to extend lifecycle hooks or override public methods of the base controller
@@ -87,32 +89,68 @@ sap.ui.define(
           // get view instance
           _oView = this.getView();
 
+          // load material types after rendering
+          _oView.attachEventOnce("afterRendering", (_) => {
+            // load material type
+            this._loadMaterialTypes();
+
+            // load Product Composition Indicator details
+            this._loadProductCompositionIndicator();
+          });
+
           // set model to view
           _oView.setModel(_oCustomerViewModel, "oCustomerViewModel");
 
-          jQuery.sap.delayedCall(100, this, () => {
-            // get status
-            this._loadStatusRestrict().then(this._disChainFieldVisibility);
-          });
+          // set model to view
+          _oView.setModel(_oLeadTimeIndicatorModel, "oLeadTimeIndicatorModel");
 
           // get compact size for message box
           _bCompact = !!_oView.$().closest(".sapUiSizeCompact").length;
 
           // attach page data loaded on odata callback with context as response
-          _oView.getController().extensionAPI.attachPageDataLoaded((oData) => {
-            let sPath = oData.context.getPath();
+          _oView
+            .getController()
+            .extensionAPI.attachPageDataLoaded(async (oData) => {
+              let sPath = oData.context.getPath();
+              let oDataVal = oData.context.getObject();
 
-            // get path of the entity
-            sPath = sPath.substr(1, sPath.indexOf("(") - 1);
+              // get path of the entity
+              sPath = sPath.substr(1, sPath.indexOf("(") - 1);
 
-            // not in object page
-            if (sPath !== "C_Product") {
-              return;
-            }
+              // update object page data
+              if (sPath === "C_Product") {
+                _oObjectData = oDataVal;
+              }
 
-            // dont replace object page data with other one
-            _oObjectData = oData.context.getObject();
-          });
+              // object page hook methods
+              if (sPath === "C_Productsalesdelivery") {
+                // check status is loaded
+                const aStatusRestrict = await this._loadStatusRestrict();
+
+                // toggle eduk fields visibility
+                this._disChainFieldVisibility(aStatusRestrict);
+              }
+
+              // object page - plant (lead time indicator)
+              if (sPath === "C_Productplant") {
+                // this._loadLeadTimeIndicator(oDataVal.Plant || "");
+
+                const sViewId = _oView.getId();
+                const oSelectBox = sap.ui
+                  .getCore()
+                  .byId(
+                    `${sViewId}--${_sCustomerNamespace}.idSubSectionFieldP01-1`
+                  );
+                let sPlant = oDataVal.Plant;
+
+                if (!sPlant) {
+                  sPlant = oDataVal.ProductForEdit;
+                }
+
+                // attach event on press
+                this._plantTableFilter(oSelectBox, sPlant);
+              }
+            });
         },
 
         /**
@@ -430,6 +468,13 @@ sap.ui.define(
               "idSubSectionField64-1",
               "Edition Category"
             );
+            // IP Assignment - IP number
+            // this._setLabelsForSelectBox("idSubSectionField65-1", "IP number");
+            // IP Assignment - Short Text for an IP
+            this._setLabelsForSelectBox(
+              "idSubSectionField66-1",
+              "Short Text for an IP"
+            );
 
             // basic media 2 - tab
 
@@ -481,9 +526,6 @@ sap.ui.define(
               "idSubSectionFieldP04-1",
               "SOFT Indicator"
             );
-
-            // distribution chain
-            this._disChainFieldVisibility(_aStatusRestrict);
           }, 100);
         },
 
@@ -1074,7 +1116,7 @@ sap.ui.define(
           .filter((val) => val !== "")
           .filter((val) => sMaterialType === val);
 
-        return aResult.length === 0;
+        return aResult.length !== 0;
       },
 
       /***********************************************************************/
@@ -1167,8 +1209,8 @@ sap.ui.define(
                 if (sDescriptionPath === "LeadTimeIndicatorDescription") {
                   // check for lead time indicator profile value
                   const oResponse = await _oThis._getPlantDescription(
-                    oDataResponse.Plant,
-                    oDataResponse.LeadTimeIndicatorProfile
+                    oDataResponse.Plant || "",
+                    oDataResponse.LeadTimeIndicatorProfile || ""
                   );
 
                   sDescription = oResponse.LeadTimeIndicatorDescription || "";
@@ -1227,14 +1269,14 @@ sap.ui.define(
           ];
 
           // instance
-          const _oThis = this;
+          //   const _oThis = this;
 
           const onAfterRendering = () => {
             // add custom selection for plant
-            if (sSelectBoxId === "idSubSectionFieldP01-1") {
-              // attach event on press
-              _oThis._plantTableFilter(oSelectBox);
-            }
+            // if (sSelectBoxId === "idSubSectionFieldP01-1") {
+            //   // attach event on press
+            //   this._plantTableFilter(oSelectBox);
+            // }
 
             var oGroupElement = oSelectBox.$().parent().parent();
             var aChildren = oGroupElement.children();
@@ -1289,7 +1331,7 @@ sap.ui.define(
         }
       },
 
-      _plantTableFilter: function (oSelectBox) {
+      _plantTableFilter: function (oSelectBox, sPlant) {
         try {
           // plant id
           const sId = `${_oView.getId()}--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::PlantForEdit::Field`;
@@ -1298,19 +1340,8 @@ sap.ui.define(
           // exit if there is no plant
           if (!oPlant) return;
 
-          // plant value
-          let sPlantVal = oPlant.getValue();
-
-          // exit if there is no plant value
-          if (!sPlantVal) return;
-
-          sPlantVal = sPlantVal.substring(
-            sPlantVal.lastIndexOf("(") + 1,
-            sPlantVal.lastIndexOf(")")
-          );
-
-          // lead time indicator filter
-          const fnPlantFilter = () => {
+          // filter
+          const fnFilter = (sPlantVal) => {
             // binding
             const oBinding = oSelectBox.getBinding("items");
 
@@ -1325,35 +1356,45 @@ sap.ui.define(
 
             // plant filter
             oBinding.filter(aFilter);
-            // r aFilters indi ding.filt
           };
 
-          // get available filters
-          const aFilters = oSelectBox.getBinding("items").aFilters || [];
+          // not editable
+          if (oPlant.getEditable()) {
+            // if change event is already available exit
+            if (oPlant.mEventRegistry.change) return;
 
-          // on load if plant has the value trigger filter request
-          if (aFilters.length !== 0) {
-            if (aFilters[0].oValue1 !== sPlantVal) {
-              fnPlantFilter();
-            }
+            // lead time indicator filter
+            const fnPlantFilter = (oEvent) => {
+              const sPlantVal = oEvent.getSource().getValue();
+
+              // filter by plant value
+              fnFilter(sPlantVal);
+            };
+
+            // attach event change for the plant field
+            oPlant.attachEvent("change", fnPlantFilter);
+
+            // initial filter on editable
+            fnPlantFilter("");
           } else {
-            // if no filters found add the filter
-            fnPlantFilter();
+            // filter by plant value
+            fnFilter(sPlant);
           }
-
-          // if change event is already available exit
-          if (oPlant.mEventRegistry.change) return;
-
-          // attach event change for the plant field
-          oPlant.attachEvent("change", fnPlantFilter);
         } catch (error) {
           // handler not implemented
+          debugger;
         }
       },
 
       _getPlantDescription: (sPlant, sLeadTimeIndicator) =>
         new Promise((resolve, reject) => {
-          if (!sPlant || !sLeadTimeIndicator) reject();
+          if (
+            sPlant === undefined ||
+            sPlant === "" ||
+            sLeadTimeIndicator === undefined ||
+            sLeadTimeIndicator === ""
+          )
+            reject();
 
           const success = (oData) => {
             resolve(oData);
@@ -1394,62 +1435,124 @@ sap.ui.define(
         });
       },
 
+      _loadProductCompositionIndicator: function () {
+        return new Promise((resolve, reject) => {
+          if (_aProductCompositionIndicator.length !== 0) {
+            resolve();
+          } else {
+            _oView
+              .getModel("customer.ProductCompositionIndicator")
+              .read("/ZPTP_C_RESP_EDITOR_VH", {
+                success: (oData) => {
+                  _aProductCompositionIndicator = oData.results;
+
+                  // set model to view
+                  _oView.setModel(
+                    new JSONModel(_aProductCompositionIndicator),
+                    "oProductCompositionIndicator"
+                  );
+
+                  resolve();
+                },
+                error: (oError) => {
+                  Log.error(
+                    `Failed to load status restrict from service - ZPTP_C_RESP_EDITOR_VH_CDS - ${oError}`
+                  );
+                  reject();
+                },
+              });
+          }
+        });
+      },
+
+      _loadLeadTimeIndicator: function (sPlant) {
+        const mParameters = {
+          success: (oData) => {
+            // set data to model
+            _oLeadTimeIndicatorModel.setData(oData.results);
+          },
+          error: (oError) => {
+            Log.error(
+              `Failed to load status restrict from service - ZPTP_C_SUP_AREA_VH - ${oError}`
+            );
+          },
+        };
+
+        // add filters if plant is available
+        if (sPlant) {
+          const aFilters = [
+            new Filter({
+              path: "Plant",
+              operator: FilterOperator.EQ,
+              value1: sPlant || "",
+            }),
+          ];
+
+          mParameters.filters = aFilters;
+        }
+
+        _oView
+          .getModel("customer.leadTimeIndicator")
+          .read("/ZPTP_C_SUP_AREA_VH", mParameters);
+      },
+
       _disChainFieldVisibility: function (aData) {
         try {
           const sId =
             "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productsalesdelivery";
-          const oSalesDelivery = sap.ui.getCore().byId(sId);
+          const sProductStatusId = `${sId}--com.sap.vocabularies.UI.v1.FieldGroup::SalesGeneralData::ProductSalesStatus::Field`;
+          const oProductStatus = sap.ui.getCore().byId(sProductStatusId);
 
-          if (!oSalesDelivery) {
-            return;
-          }
+          if (oProductStatus) {
+            const fnVisible = (sValue) => {
+              let bEditable = false;
+              let bMaterialStatus = false;
+              let bMaterialType = false;
+              // const oParms = oEvent.getParameters();
 
-          jQuery.sap.delayedCall(250, this, () => {
-            const sProductStatusId = `${sId}--com.sap.vocabularies.UI.v1.FieldGroup::SalesGeneralData::ProductSalesStatus::Field`;
-            const oProductStatus = sap.ui.getCore().byId(sProductStatusId);
+              if (sValue) {
+                for (var i = 0, iLen = aData.length; i < iLen; i++) {
+                  // validate material status
+                  if (
+                    aData[i].VariableName === "MATERIAL_STATUS" &&
+                    aData[i].value === sValue
+                  ) {
+                    bMaterialStatus = true;
+                  }
 
-            if (oProductStatus) {
-              // if change is already registered then exit
-              if (oProductStatus.mEventRegistry.hasOwnProperty("change")) {
-                return;
-              }
-
-              // attach change event for all the change in status value
-              oProductStatus.attachEvent("change", (oEvent) => {
-                let bEditable = false;
-                let bMaterialStatus = false;
-                let bMaterialType = false;
-                const oParms = oEvent.getParameters();
-
-                if (oParms.value) {
-                  for (var i = 0, iLen = aData.length; i < iLen; i++) {
-                    // validate material status
-                    if (
-                      aData[i].VariableName === "MATERIAL_STATUS" &&
-                      aData[i].value === oParms.value
-                    ) {
-                      bMaterialStatus = true;
-                    }
-
-                    // validate material type
-                    if (
-                      aData[i].VariableName === "MATERIAL_TYPE" &&
-                      aData[i].value === _oObjectData.ProductType
-                    ) {
-                      bMaterialType = true;
-                    }
+                  // validate material type
+                  if (
+                    aData[i].VariableName === "MATERIAL_TYPE" &&
+                    aData[i].value === _oObjectData.ProductType
+                  ) {
+                    bMaterialType = true;
                   }
                 }
+              }
 
-                // editable only on both condition satisfies material status and material type
-                bEditable = bMaterialStatus && bMaterialType;
+              // editable only on both condition satisfies material status and material type
+              bEditable = bMaterialStatus && bMaterialType;
 
-                // set to the view model
-                _oCustomerViewModel.setProperty("/bEDUKStopAcc", bEditable);
-                _oCustomerViewModel.setProperty("/bEDUKStopBill", bEditable);
+              // set to the view model
+              _oCustomerViewModel.setProperty("/bEDUKStopAcc", bEditable);
+              _oCustomerViewModel.setProperty("/bEDUKStopBill", bEditable);
+            };
+
+            // if change is already registered then exit
+            if (!oProductStatus.mEventRegistry.hasOwnProperty("change")) {
+              // attach change event for all the change in status value
+              oProductStatus.attachEvent("change", (oEvent) => {
+                fnVisible(oEvent.getSource().getValue());
               });
             }
-          });
+
+            // product status from binding context
+            const sStatus = oProductStatus.getBindingContext().getObject()
+              .ProductSalesStatus;
+
+            // handle initial visibility
+            fnVisible(sStatus);
+          }
         } catch (error) {
           Log.error(
             `Failed to handle field visibility for distribution chain based on product status, error - ${error}`

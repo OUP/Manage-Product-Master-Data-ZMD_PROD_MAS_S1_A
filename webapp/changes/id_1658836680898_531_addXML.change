@@ -1,24 +1,24 @@
 {
-	"fileName": "id_1634558495102_650_addXML",
+	"fileName": "id_1658836680898_531_addXML",
 	"fileType": "change",
 	"changeType": "addXML",
-	"moduleName": "customer/ZMD_PROD_MAS_S1_A/changes/fragments/Plant_GI_LeadTimeIndicator.fragment.xml",
+	"moduleName": "customer/ZMD_PROD_MAS_S1_A/changes/fragments/GI_Packaging_Material_Data.fragment.xml",
 	"reference": "customer.ZMD_PROD_MAS_S1_A",
 	"packageName": "$TMP",
 	"content": {
-		"targetAggregation": "groupElements",
-		"index": 17,
-		"fragmentPath": "fragments/Plant_GI_LeadTimeIndicator.fragment.xml"
+		"targetAggregation": "subSections",
+		"index": 8,
+		"fragmentPath": "fragments/GI_Packaging_Material_Data.fragment.xml"
 	},
 	"selector": {
-		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup",
+		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Product--GeneralInfo::Section",
 		"idIsLocal": false
 	},
 	"layer": "CUSTOMER_BASE",
 	"texts": {},
 	"namespace": "apps/mdm.cmd.product.maintain/changes/",
 	"projectId": "customer.ZMD_PROD_MAS_S1_A",
-	"creation": "2021-10-18T12:04:15.448Z",
+	"creation": "2022-07-26T11:58:09.579Z",
 	"originalLanguage": "EN",
 	"support": {
 		"generator": "Change.createInitialFileContent",

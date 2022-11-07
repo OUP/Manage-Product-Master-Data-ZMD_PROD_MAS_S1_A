@@ -12,9 +12,9 @@
             <smartField:SmartField id="idSubSectionFieldP02" value="{ZZ1_GHIJIndicator_PLT}" />
         </smartForm:GroupElement>
         <smartForm:GroupElement id="idSmartFormGroupElementP02-0" visible="{ui>/editable}">
-            <Select id="idSubSectionFieldP02-1" selectedKey="{ZZ1_GHIJIndicator_PLT}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_GHIJIndicatorSet}">
+            <ComboBox id="idSubSectionFieldP02-1" selectedKey="{ZZ1_GHIJIndicator_PLT}" showSecondaryValues="true" items="{/ZZ1_GHIJIndicatorSet}">
                 <core:ListItem id="idSubSectionFieldP02-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-            </Select>
+            </ComboBox>
         </smartForm:GroupElement>
 
         <!-- New/Est Flag -->
@@ -22,9 +22,9 @@
             <smartField:SmartField id="idSubSectionFieldP03" value="{ZZ1_NewEstablishFlag_PLT}" />
         </smartForm:GroupElement>
         <smartForm:GroupElement id="idSmartFormGroupElementP03-0" visible="{ui>/editable}">
-            <Select id="idSubSectionFieldP03-1" selectedKey="{ZZ1_NewEstablishFlag_PLT}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_NewEstablishFlagSet}">
+            <ComboBox id="idSubSectionFieldP03-1" selectedKey="{ZZ1_NewEstablishFlag_PLT}" showSecondaryValues="true" items="{/ZZ1_NewEstablishFlagSet}">
                 <core:ListItem id="idSubSectionFieldP03-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-            </Select>
+            </ComboBox>
         </smartForm:GroupElement>
 
         <!-- Soft Indicator -->
@@ -32,9 +32,9 @@
             <smartField:SmartField id="idSubSectionFieldP04" value="{ZZ1_SoftIndicator1_PLT}" />
         </smartForm:GroupElement>
         <smartForm:GroupElement id="idSmartFormGroupElementP04-0" visible="{ui>/editable}">
-            <Select id="idSubSectionFieldP04-1" selectedKey="{ZZ1_SoftIndicator1_PLT}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_SoftIndicator1Set}">
+            <ComboBox id="idSubSectionFieldP04-1" selectedKey="{ZZ1_SoftIndicator1_PLT}" showSecondaryValues="true" items="{/ZZ1_SoftIndicator1Set}">
                 <core:ListItem id="idSubSectionFieldP04-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-            </Select>
+            </ComboBox>
         </smartForm:GroupElement>
 
         <!-- Stock Receiving Date -->

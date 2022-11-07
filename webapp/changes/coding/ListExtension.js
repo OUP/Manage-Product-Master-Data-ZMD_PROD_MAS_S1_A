@@ -20,6 +20,22 @@ sap.ui.define(
         onInit: function () {
           // get view instance
           _oView = this.getView();
+
+          // increse the model size
+          try {
+            // get the OData model
+            var oIpNumberModel = _oView
+              .getController()
+              .getOwnerComponent()
+              .getModel("customer.IpNumber");
+
+            // attach the event once event to the OData model
+            oIpNumberModel.attachEventOnce("requestCompleted", (_) => {
+              oIpNumberModel.setSizeLimit(999999);
+            });
+          } catch (error) {
+            // if model is not available ignore ths size
+          }
         },
 
         /**

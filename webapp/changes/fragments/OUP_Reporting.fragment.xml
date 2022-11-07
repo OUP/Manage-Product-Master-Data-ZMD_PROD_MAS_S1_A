@@ -42,9 +42,9 @@
                         <smartField:SmartField id="idSubSectionField6" value="{ZZ1_OtherRights_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement6-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField6-1" selectedKey="{ZZ1_OtherRights_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_OtherRightsSet}">
+                        <ComboBox id="idSubSectionField6-1" selectedKey="{ZZ1_OtherRights_PRD}" showSecondaryValues="true" items="{/ZZ1_OtherRightsSet}">
                            <core:ListItem id="idSubSectionField6-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      
                      <!--Bookclub Rights-->
@@ -52,9 +52,9 @@
                         <smartField:SmartField id="idSubSectionField7" value="{ZZ1_BookclubRights_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement7-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField7-1" selectedKey="{ZZ1_BookclubRights_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_BookclubRightsSet}">
+                        <ComboBox id="idSubSectionField7-1" selectedKey="{ZZ1_BookclubRights_PRD}" showSecondaryValues="true" items="{/ZZ1_BookclubRightsSet}">
                            <core:ListItem id="idSubSectionField7-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      
                      <!--Translation Rights-->
@@ -62,9 +62,9 @@
                         <smartField:SmartField id="idSubSectionField8" value="{ZZ1_TranslationRights_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement8-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField8-1" selectedKey="{ZZ1_TranslationRights_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_TranslationRightsSet}">
+                        <ComboBox id="idSubSectionField8-1" selectedKey="{ZZ1_TranslationRights_PRD}" showSecondaryValues="true" items="{/ZZ1_TranslationRightsSet}">
                            <core:ListItem id="idSubSectionField8-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      
                      <!--Inspection Flag-->
@@ -72,9 +72,9 @@
                         <smartField:SmartField id="idSubSectionField9" value="{ZZ1_InspectionFlag_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement9-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField9-1" selectedKey="{ZZ1_InspectionFlag_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_InspectionFlagSet}">
+                        <ComboBox id="idSubSectionField9-1" selectedKey="{ZZ1_InspectionFlag_PRD}" showSecondaryValues="true" items="{/ZZ1_InspectionFlagSet}">
                            <core:ListItem id="idSubSectionField9-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      
                      <!--Royalty Flag-->
@@ -82,9 +82,9 @@
                         <smartField:SmartField id="idSubSectionField10" value="{ZZ1_RoyaltyFlag_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement10-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField10-1" selectedKey="{ZZ1_RoyaltyFlag_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_RoyaltyFlagSet}">
+                        <ComboBox id="idSubSectionField10-1" selectedKey="{ZZ1_RoyaltyFlag_PRD}" showSecondaryValues="true" items="{/ZZ1_RoyaltyFlagSet}">
                            <core:ListItem id="idSubSectionField10-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                      
                      <!--Responsible Editor-->
@@ -122,9 +122,9 @@
                         <smartField:SmartField id="idSubSectionField17" value="{ZZ1_DigitalLicencePeri_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement17-0" visible="{ui>/editable}">
-                        <Select id="idSubSectionField17-1" selectedKey="{ZZ1_DigitalLicencePeri_PRD}" showSecondaryValues="true" forceSelection="false" items="{/ZZ1_DigitalLicencePeriSet}">
+                        <ComboBox id="idSubSectionField17-1" selectedKey="{ZZ1_DigitalLicencePeri_PRD}" showSecondaryValues="true" items="{/ZZ1_DigitalLicencePeriSet}">
                            <core:ListItem id="idSubSectionField17-2" key="{Code}" text="{Code}" additionalText="{Description}" />
-                        </Select>
+                        </ComboBox>
                      </smartForm:GroupElement>
                   </smartForm:Group>
                   
