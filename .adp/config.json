@@ -7,5 +7,5 @@
   "isOVPApp": false,
   "isFioriElement": true,
   "environment": "ABAP",
-  "ui5Version": "1.90.14"
+  "ui5Version": "1.96.21"
 }

@@ -1,0 +1,71 @@
+{
+	"fileName": "id_1686032506560_635_moveControls",
+	"fileType": "change",
+	"changeType": "moveControls",
+	"moduleName": "",
+	"reference": "customer.ZMD_PROD_MAS_S1_A",
+	"packageName": "$TMP",
+	"content": {
+		"movedElements": [{
+			"selector": {
+				"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup_C_ProductplantType_HasPostToInspectionStock",
+				"idIsLocal": false
+			},
+			"sourceIndex": 0,
+			"targetIndex": 17
+		}],
+		"source": {
+			"selector": {
+				"aggregation": "formElements",
+				"type": "sap.ui.comp.smartform.Group",
+				"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup",
+				"idIsLocal": false
+			}
+		},
+		"target": {
+			"selector": {
+				"aggregation": "formElements",
+				"type": "sap.ui.comp.smartform.Group",
+				"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup",
+				"idIsLocal": false
+			}
+		}
+	},
+	"selector": {
+		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--GeneralInfo::Form",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/mdm.cmd.product.maintain/changes/",
+	"projectId": "customer.ZMD_PROD_MAS_S1_A",
+	"creation": "2023-06-06T06:21:46.992Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "sap.ui.rta.command",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.96.19",
+		"sourceChangeFileName": "",
+		"compositeCommand": "",
+		"command": "move"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {
+		"source": {
+			"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup",
+			"idIsLocal": false
+		},
+		"target": {
+			"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup",
+			"idIsLocal": false
+		},
+		"movedElements": [{
+			"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup_C_ProductplantType_HasPostToInspectionStock",
+			"idIsLocal": false
+		}]
+	},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}
