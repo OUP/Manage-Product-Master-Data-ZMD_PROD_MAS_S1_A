@@ -1,0 +1,33 @@
+{
+	"fileName": "id_1688380474042_218_hideControl",
+	"fileType": "change",
+	"changeType": "hideControl",
+	"moduleName": "",
+	"reference": "customer.ZMD_PROD_MAS_S1_A",
+	"packageName": "$TMP",
+	"content": {},
+	"selector": {
+		"id": "mdm.cmd.product.maintain::sap.suite.ui.generic.template.ObjectPage.view.Details::C_Productplant--com.sap.vocabularies.UI.v1.FieldGroup::PlantGeneralData::FormGroup_C_ProductplantType_HasPostToInspectionStock",
+		"idIsLocal": false
+	},
+	"layer": "CUSTOMER_BASE",
+	"texts": {},
+	"namespace": "apps/mdm.cmd.product.maintain/changes/",
+	"projectId": "customer.ZMD_PROD_MAS_S1_A",
+	"creation": "2023-07-03T10:34:34.555Z",
+	"originalLanguage": "EN",
+	"support": {
+		"generator": "sap.ui.rta.command",
+		"service": "",
+		"user": "",
+		"sapui5Version": "1.96.19",
+		"sourceChangeFileName": "",
+		"compositeCommand": "id_1688380474042_219_composite",
+		"command": "remove"
+	},
+	"oDataInformation": {},
+	"dependentSelector": {},
+	"jsOnly": false,
+	"variantReference": "",
+	"appDescriptorChange": false
+}
