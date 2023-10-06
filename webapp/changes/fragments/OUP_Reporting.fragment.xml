@@ -1,42 +1,45 @@
-<?xml version="1.0" encoding="UTF-8"?>
+<?xml version="1.0" encoding="UTF-8" ?>
 <!-- Use stable and unique id's!-->
-<core:FragmentDefinition xmlns:core="sap.ui.core" xmlns="sap.m" xmlns:smartField="sap.ui.comp.smartfield" xmlns:smartForm="sap.ui.comp.smartform" xmlns:uxap="sap.uxap">
+<core:FragmentDefinition xmlns:core="sap.ui.core"
+   xmlns="sap.m"
+   xmlns:smartField="sap.ui.comp.smartfield"
+   xmlns:smartForm="sap.ui.comp.smartform"
+   xmlns:uxap="sap.uxap">
    <uxap:ObjectPageSection id="idSection0" title="section0" titleUppercase="false">
       <uxap:subSections>
          <uxap:ObjectPageSubSection id="idSection0SubSection0" title="OUP Reporting" titleUppercase="false" visible="{parts:[{value:'OUP'},{path:'ProductType'}], formatter:'.extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleTabVisibility'}">
             <uxap:blocks>
-               
-               <smartForm:SmartForm id="idSmartForm0" title="OUP Fields" editable="{ui>/editable}">
+               <smartForm:SmartForm id="idSmartForm0" title="OUP Reporting" editable="{ui>/editable}">
                   <smartForm:layout>
                      <smartForm:ColumnLayout id="idSmartColumnLayout0" columnsXL="4" columnsL="3" columnsM="2" labelCellsLarge="12" emptyCellsLarge="0" />
                   </smartForm:layout>
-                  
+
                   <smartForm:Group id="idSmartFormGroup0">
                      <!--Subject-->
                      <smartForm:GroupElement id="idSmartFormGroupElement1">
                         <smartField:SmartField id="idSubSectionField1" value="{ZZ1_Subject_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Product Type-->
                      <smartForm:GroupElement id="idSmartFormGroupElement2">
                         <smartField:SmartField id="idSubSectionField2" value="{ZZ1_ProductType_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Market Sector-->
                      <smartForm:GroupElement id="idSmartFormGroupElement3">
                         <smartField:SmartField id="idSubSectionField3" value="{ZZ1_Market_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Level-->
                      <smartForm:GroupElement id="idSmartFormGroupElement4">
                         <smartField:SmartField id="idSubSectionField4" value="{ZZ1_Level_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Pack Information-->
                      <smartForm:GroupElement id="idSmartFormGroupElement5">
                         <smartField:SmartField id="idSubSectionField5" value="{ZZ1_PackInformation_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Other Rights-->
                      <smartForm:GroupElement id="idSmartFormGroupElement6" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField6" value="{ZZ1_OtherRights_PRD}" />
@@ -46,7 +49,7 @@
                            <core:ListItem id="idSubSectionField6-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                     
+
                      <!--Bookclub Rights-->
                      <smartForm:GroupElement id="idSmartFormGroupElement7" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField7" value="{ZZ1_BookclubRights_PRD}" />
@@ -56,7 +59,7 @@
                            <core:ListItem id="idSubSectionField7-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                     
+
                      <!--Translation Rights-->
                      <smartForm:GroupElement id="idSmartFormGroupElement8" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField8" value="{ZZ1_TranslationRights_PRD}" />
@@ -66,7 +69,7 @@
                            <core:ListItem id="idSubSectionField8-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                     
+
                      <!--Inspection Flag-->
                      <smartForm:GroupElement id="idSmartFormGroupElement9" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField9" value="{ZZ1_InspectionFlag_PRD}" />
@@ -76,7 +79,7 @@
                            <core:ListItem id="idSubSectionField9-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                     
+
                      <!--Royalty Flag-->
                      <smartForm:GroupElement id="idSmartFormGroupElement10" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField10" value="{ZZ1_RoyaltyFlag_PRD}" />
@@ -86,37 +89,37 @@
                            <core:ListItem id="idSubSectionField10-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                     
+
                      <!--Responsible Editor-->
                      <smartForm:GroupElement id="idSmartFormGroupElement11">
                         <smartField:SmartField id="idSubSectionField11" value="{ZZ1_ResponsibleEditor_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Source-->
                      <smartForm:GroupElement id="idSmartFormGroupElement12">
                         <smartField:SmartField id="idSubSectionField12" value="{ZZ1_Source_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Composer/Author-->
                      <smartForm:GroupElement id="idSmartFormGroupElement13">
                         <smartField:SmartField id="idSubSectionField13" value="{ZZ1_ComposerAuthor_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Velocity Cost Code-->
                      <smartForm:GroupElement id="idSmartFormGroupElement14">
                         <smartField:SmartField id="idSubSectionField14" value="{ZZ1_VelocityCostCode_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Print%-->
                      <smartForm:GroupElement id="idSmartFormGroupElement15">
                         <smartField:SmartField id="idSubSectionField15" value="{ZZ1_Print_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Digital %-->
                      <smartForm:GroupElement id="idSmartFormGroupElement16">
                         <smartField:SmartField id="idSubSectionField16" value="{ZZ1_Digital_PRD}" />
                      </smartForm:GroupElement>
-                     
+
                      <!--Digital Licence Period-->
                      <smartForm:GroupElement id="idSmartFormGroupElement17" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField17" value="{ZZ1_DigitalLicencePeri_PRD}" />
@@ -126,10 +129,18 @@
                            <core:ListItem id="idSubSectionField17-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                  </smartForm:Group>
-                  
-               </smartForm:SmartForm>
 
+                     <!--Title owned by Branch-->
+                     <smartForm:GroupElement id="idSmartFormGroupElementCR18" visible="{= !${ui>/editable}}">
+                        <smartField:SmartField id="idSubSectionFieldCR18" value="{ZZ1_TITLE_BRANCH_PRD}" />
+                     </smartForm:GroupElement>
+                     <smartForm:GroupElement id="idSmartFormGroupElementCR18-0" visible="{ui>/editable}">
+                        <ComboBox id="idSubSectionFieldCR18-1" selectedKey="{ZZ1_TITLE_BRANCH_PRD}" showSecondaryValues="true" items="{/ZZ1_TITLE_BRANCHSet}">
+                           <core:ListItem id="idSubSectionFieldCR18-2" key="{Code}" text="{Code}" additionalText="{Description}" />
+                        </ComboBox>
+                     </smartForm:GroupElement>
+                  </smartForm:Group>
+               </smartForm:SmartForm>
             </uxap:blocks>
          </uxap:ObjectPageSubSection>
       </uxap:subSections>

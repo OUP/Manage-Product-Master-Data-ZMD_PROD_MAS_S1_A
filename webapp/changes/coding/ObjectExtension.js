@@ -236,6 +236,11 @@ sap.ui.define(
               "idSubSectionField17",
               "ZZ1_DigitalLicencePeri_PRDT"
             );
+            // Title owned by Branch
+            this._loadSmartFieldDescription(
+              "idSubSectionFieldCR18",
+              "ZZ1_TITLE_BRANCH_PRDT"
+            );
 
             // physical characterisitics - tab
 
@@ -371,6 +376,11 @@ sap.ui.define(
             this._setLabelsForSelectBox(
               "idSubSectionField17-1",
               "Digital Licence Period"
+            );
+            // Title owned by Branch
+            this._setLabelsForSelectBox(
+              "idSubSectionFieldCR18-1",
+              "Title owned by Branch"
             );
 
             // physical characterisitics - tab
@@ -553,9 +563,8 @@ sap.ui.define(
         // save globally
         _oRowData = oBindingContext.getObject();
 
-        const _oCodeTypePopoverODataModel = _oView.getModel(
-          "customer.codeType"
-        );
+        const _oCodeTypePopoverODataModel =
+          _oView.getModel("customer.codeType");
 
         if (!_oCodeTypeDialog) {
           // set deferred group for batch operations
@@ -1140,9 +1149,8 @@ sap.ui.define(
                   _aMaterialTypesList = oData.results.map((obj) => {
                     let response = {};
                     response.isVisible = obj.IsInvisible !== "X";
-                    response.materialType = obj.materialtypetabname.split(
-                      "_"
-                    )[0];
+                    response.materialType =
+                      obj.materialtypetabname.split("_")[0];
                     response.tabName = obj.materialtypetabname.split("_")[1];
                     return response;
                   });
@@ -1547,8 +1555,9 @@ sap.ui.define(
             }
 
             // product status from binding context
-            const sStatus = oProductStatus.getBindingContext().getObject()
-              .ProductSalesStatus;
+            const sStatus = oProductStatus
+              .getBindingContext()
+              .getObject().ProductSalesStatus;
 
             // handle initial visibility
             fnVisible(sStatus);
