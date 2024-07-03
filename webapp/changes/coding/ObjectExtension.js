@@ -1128,6 +1128,15 @@ sap.ui.define(
         return aResult.length !== 0;
       },
 
+      handleQtyValue: function (oEvent) {
+        const oSource = oEvent.getSource();
+        const sExistingValue = oEvent.getParameter("value");
+
+        if(sExistingValue === "") {
+          oSource.setValue("0.000");
+        }
+      }, 
+
       /***********************************************************************/
       /*                          INTERNAL METHODS                           */
       /***********************************************************************/

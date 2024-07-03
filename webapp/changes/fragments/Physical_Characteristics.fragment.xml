@@ -7,7 +7,7 @@
    xmlns:uxap="sap.uxap">
    <uxap:ObjectPageSection id="idSection1" title="section1" titleUppercase="false">
       <uxap:subSections>
-         <uxap:ObjectPageSubSection id="idSection1SubSection1" title="Physical Characteristics" titleUppercase="false" visible="{ parts: [{value:'PHY'}, {path:'ProductType'}], formatter: '.extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleTabVisibility'}">
+         <uxap:ObjectPageSubSection id="idSection1SubSection1" title="Physical Characteristics" titleUppercase="false" visible="{parts: [{value:'PHY'}, {path:'ProductType'}], formatter: '.extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleTabVisibility'}">
             <uxap:blocks>
 
                <smartForm:SmartForm id="idSmartForm1" editable="{ui>/editable}">
@@ -30,7 +30,7 @@
                         <smartField:SmartField id="idSubSectionField19" value="{ZZ1_Extent_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement19-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField19-1" value="{ZZ1_Extent_PRD}" />
+                        <Input id="idSubSectionField19-1" value="{ZZ1_Extent_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField19-2" selectedKey="{ZZ1_Extent_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField19-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -62,12 +62,12 @@
                            <core:ListItem id="idSubSectionField22-2" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
                      </smartForm:GroupElement>
-                     <!--Feature1 Quantity with UOM-->
+                     <!--Unit for Feature1 Quantity-->
                      <smartForm:GroupElement id="idSmartFormGroupElement23" visible="{= !${ui>/editable}}">
                         <smartField:SmartField id="idSubSectionField23" value="{ZZ1_Feature1Quantity_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement23-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField23-1" value="{ZZ1_Feature1Quantity_PRD}" />
+                        <Input id="idSubSectionField23-1" value="{ZZ1_Feature1Quantity_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField23-2" selectedKey="{ZZ1_Feature1Quantity_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField23-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -86,7 +86,7 @@
                         <smartField:SmartField id="idSubSectionField25" value="{ZZ1_Feature2Quantity_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement25-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField25-1" value="{ZZ1_Feature2Quantity_PRD}" />
+                        <Input id="idSubSectionField25-1" value="{ZZ1_Feature2Quantity_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField25-2" selectedKey="{ZZ1_Feature2Quantity_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField25-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -99,7 +99,7 @@
                         <smartField:SmartField id="idSubSectionField26" value="{ZZ1_Lengthformat_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement26-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField26-1" value="{ZZ1_Lengthformat_PRD}" />
+                        <Input id="idSubSectionField26-1" value="{ZZ1_Lengthformat_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField26-2" selectedKey="{ZZ1_Lengthformat_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField26-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -109,7 +109,7 @@
                         <smartField:SmartField id="idSubSectionField27" value="{ZZ1_Widthformat_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement27-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField27-1" value="{ZZ1_Widthformat_PRD}" />
+                        <Input id="idSubSectionField27-1" value="{ZZ1_Widthformat_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField27-2" selectedKey="{ZZ1_Widthformat_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField27-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -119,7 +119,7 @@
                         <smartField:SmartField id="idSubSectionField28" value="{ZZ1_Thickness_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement28-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField28-1" value="{ZZ1_Thickness_PRD}" />
+                        <Input id="idSubSectionField28-1" value="{ZZ1_Thickness_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField28-2" selectedKey="{ZZ1_Thickness_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField28-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -132,7 +132,7 @@
                         <smartField:SmartField id="idSubSectionField29" value="{ZZ1_Weightofpaper_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement29-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField29-1" value="{ZZ1_Weightofpaper_PRD}" />
+                        <Input id="idSubSectionField29-1" value="{ZZ1_Weightofpaper_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField29-2" selectedKey="{ZZ1_Weightofpaper_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField29-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -142,7 +142,7 @@
                         <smartField:SmartField id="idSubSectionField30" value="{ZZ1_Leafweight_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement30-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField30-1" value="{ZZ1_Leafweight_PRD}" />
+                        <Input id="idSubSectionField30-1" value="{ZZ1_Leafweight_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField30-2" selectedKey="{ZZ1_Leafweight_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField30-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -152,7 +152,7 @@
                         <smartField:SmartField id="idSubSectionField31" value="{ZZ1_Paperwtcommonpart_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement31-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField31-1" value="{ZZ1_Paperwtcommonpart_PRD}" />
+                        <Input id="idSubSectionField31-1" value="{ZZ1_Paperwtcommonpart_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField31-2" selectedKey="{ZZ1_Paperwtcommonpart_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField31-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
@@ -162,7 +162,7 @@
                         <smartField:SmartField id="idSubSectionField32" value="{ZZ1_LeafWtcommonpart_PRD}" />
                      </smartForm:GroupElement>
                      <smartForm:GroupElement id="idSmartFormGroupElement32-0" visible="{ui>/editable}">
-                        <Input id="idSubSectionField32-1" value="{ZZ1_LeafWtcommonpart_PRD}" />
+                        <Input id="idSubSectionField32-1" value="{ZZ1_LeafWtcommonpart_PRD}" change=".extension.ZMD_PROD_MAS_S1_A.ObjectExtension.handleQtyValue" />
                         <ComboBox id="idSubSectionField32-2" selectedKey="{ZZ1_LeafWtcommonpart_PRDU}" showSecondaryValues="true" items="{/CFDUnitOfMeasureSet}">
                            <core:ListItem id="idSubSectionField32-3" key="{Code}" text="{Code}" additionalText="{Description}" />
                         </ComboBox>
